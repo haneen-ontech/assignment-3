@@ -1,0 +1,61 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+            <form class="form" method="post">
+                <div class="form-group">
+                    <label for="titleTextField">Title</label>
+                    <input type="text" class="form-control"
+                    id="titleTextField"
+                    placeholder="Title your project"
+                    name="title"
+                    value="<%= Project.title%>"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="departmentTextField">Department</label>
+                        <select class="form-control" id="departmentTextField" name="department" required>
+                            <option value="">-- Select Department --</option>
+                            <option value="IT" <%= Project.department === 'IT' ? 'selected' : '' %>>IT</option>
+                            <option value="Marketing" <%= Project.department === 'Marketing' ? 'selected' : '' %>>Marketing</option>
+                            <option value="HR" <%= Project.department === 'HR' ? 'selected' : '' %>>HR</option>
+                            <option value="Finance" <%= Project.department === 'Finance' ? 'selected' : '' %>>Finance</option>
+                            <option value="Sales" <%= Project.department === 'Sales' ? 'selected' : '' %>>Sales</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="dueDateTextField">Due Date</label>
+                    <input type="date" class="form-control"
+                    id="dueDateTextField"
+                    placeholder="Enter the due date"
+                    name="dueDate"
+                    value="<%= Project.dueDate.toISOString().slice(0,10)%>" 
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="peopleNeededTextField">People Needed</label>
+                    <input type="number" class="form-control"
+                    id="peopleNeededTextField"
+                    placeholder="How many people are needed for this project"
+                    name="peopleNeeded" 
+                    value="<%= Project.peopleNeeded%>"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="descriptionTextArea">Description</label>
+                    <textarea class="form-control" id="descriptionTextArea" name="description" required><%= Project.description %></textarea>
+                </div>
+                <br>
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit
+                </button>
+                <a href="/projects" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include ../partials/footer.ejs %>

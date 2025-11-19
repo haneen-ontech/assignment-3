@@ -1,0 +1,59 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <h1><%= title %></h1>
+
+            <a href="/projects/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Add a Project
+            </a>
+
+            <table class="table table-bordered table-striped table-hover">
+
+                <!-- Header row OUTSIDE the loop -->
+                <tr class="d-flex">
+                    <th class="text-center col-2">Title</th>
+                    <th class="text-center col-2">Department</th>
+                    <th class="text-center col-2">Due Date</th>
+                    <th class="text-center col-1">People Needed</th>
+                    <th class="text-center col-4">Description</th>
+                    <th class="text-center col-1"></th>
+                    <th class="text-center col-1"></th>
+                </tr>
+
+                <!-- Loop starts HERE -->
+                <% for (let count = 0; count < ProjectList.length; count++) { %>
+
+                <tr class="d-flex">
+                    <td class="text-center col-2"><%= ProjectList[count].title %></td>
+                    <td class="text-center col-2"><%= ProjectList[count].department %></td>
+                    <td class="text-center col-2"><%= ProjectList[count].dueDate.toISOString().slice(0,10) %></td>
+                    <td class="text-center col-1"><%= ProjectList[count].peopleNeeded %></td>
+                    <td class="col-4"><%= ProjectList[count].description %></td>
+
+                    <td class="text-center col-1">
+                        <a href="/projects/edit/<%= ProjectList[count]._id %>" class="btn btn-primary btn-sm">
+                            <i class="fas fa-pencil-alt"></i> Edit
+                        </a>
+                    </td>
+
+                    <td class="text-center col-1">
+                        <a href="/projects/delete/<%= ProjectList[count]._id %>" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i> Delete
+                        </a>
+                    </td>
+                </tr>
+
+                <% } %>
+
+            </table>
+        </div>
+    </div>
+</main>
+<br>
+<br>
+<br>
+
+<%- include ../partials/footer.ejs %>

@@ -1,0 +1,48 @@
+<footer class="mt-auto">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom" style="background-color: #030a3c;">
+    <div class="container-fluid d-flex align-items-center">
+
+      <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#footerNav" aria-controls="footerNav" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <ul class ="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="navbar-brand" href="/index">Navbar</a>
+        </li>
+      </ul>
+
+      <div class="text-center text-white py-2">
+        <h6 class="navbar-text">&copy; 2025 Haneen Al-musowi. All rights reserved</h6>
+      </div>
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <% if(title=="Add a Project") { %>
+              <a class="nav-link active" href="/projects/add">
+                <i class="fa-solid fa-lg fa-plus text-white"></i> Add a Project
+              </a>
+            <% } else { %>
+              <a class="nav-link" href="/projects/add">
+                <i class="fa-solid fa-lg fa-plus"></i> Add a Project
+              </a>
+            <% } %>
+          </li>
+
+          <li class="nav-item">
+            <% if(title=="Help") { %>
+              <a class="nav-link active" href="/help">
+                <i class="fa-solid fa-lg fa-phone text-white"></i> Help
+              </a>
+            <% } else { %>
+              <a class="nav-link" href="/help">
+                <i class="fa-solid fa-lg fa-phone"></i> Help
+              </a>
+            <% } %>
+          </li>
+        </ul>
+    </div>
+  </nav>
+</footer>
