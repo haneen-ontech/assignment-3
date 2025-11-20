@@ -1,19 +1,20 @@
 <footer class="mt-auto">
   <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom" style="background-color: #030a3c;">
-    <div class="container-fluid d-flex align-items-center">
+    <div class="container-fluid">
+
+      <a class="navbar-brand d-flex align-items-center" href="/" class="nav-link p-0">
+        <img src="/Asset/images/comp-logo.png" alt="Company Logo" class="rounded-circle" style="width:40px; height:40px; object-fit:cover;">
+        <span class="ms-2">Company ABC</span>
+      </a>
 
       <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
         data-bs-target="#footerNav" aria-controls="footerNav" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <ul class ="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="navbar-brand" href="/index">Navbar</a>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse" id="footerNav">
 
-      <div class="text-center text-white py-2">
+      <div class="mx-auto text-center text-white py-2">
         <h6 class="navbar-text">&copy; 2025 Haneen Al-musowi. All rights reserved</h6>
       </div>
 
@@ -43,6 +44,7 @@
             <% } %>
           </li>
         </ul>
+      </div>
     </div>
   </nav>
 </footer>
