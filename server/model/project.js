@@ -1,22 +1,22 @@
 let mongoose = require('mongoose')
 
-// create a model class
+// create a mongoose schema for the project class
 let projectModel = mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true // means it is a mandatory input for this object
   },
   department: {
     type: String,
-    enum: ["IT", "Finance", "Marketing", "HR", "Sales"], // will have dropdown-like behavior on front-end
+    enum: ["IT", "Finance", "Marketing", "HR", "Sales"], // only these values are considered true (accepted), will have dropdown-like behavior on front-end
     required: true
   },
   dueDate: {
-    type: Date,
+    type: Date, // date type to allow users to access a calendar
     required: true
   },
   peopleNeeded: {
-    type: Number,
+    type: Number, // number type to ensure users only input integers
     required: true
   },
   description: {
@@ -24,7 +24,7 @@ let projectModel = mongoose.Schema({
   }},
 
   {
-    collection:"projects"
+    collection:"projects" // schema created for my projects collection
   }
 
 );

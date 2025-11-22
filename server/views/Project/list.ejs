@@ -1,18 +1,22 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/main_nav.ejs %>
 
+<!--main container for content-->
 <main class="container">
     <div class="row">
+        <!--center column using offset-->
         <div class="offset-md-1 col-md-10">
             <h1><%= title %></h1>
 
+            <!--button that takes users to add projects page-->
             <a href="/projects/add" class="btn btn-primary my-2" role="button">
                 <i class="fas fa-plus-circle"></i> Add a Project
             </a>
 
+            <!--table for storing mongo database-->
             <table class="table table-bordered table-striped table-hover">
 
-                <!-- Header row OUTSIDE the loop -->
+                <!-- Header row outside the loop -->
                 <tr class="d-flex">
                     <th class="text-center col-2">Title</th>
                     <th class="text-center col-2">Department</th>
@@ -23,22 +27,25 @@
                     <th class="text-center col-1"></th>
                 </tr>
 
-                <!-- Loop starts HERE -->
+                <!-- Loop starts here, traverse through each value in project object projectlist length times in order to fully load object variables -->
                 <% for (let count = 0; count < ProjectList.length; count++) { %>
 
                 <tr class="d-flex">
                     <td class="text-center col-2"><%= ProjectList[count].title %></td>
                     <td class="text-center col-2"><%= ProjectList[count].department %></td>
+                    <!--toISOString function allows us to slice the date variable and only take components that we want from it, ex: year, month and day-->
                     <td class="text-center col-2"><%= ProjectList[count].dueDate.toISOString().slice(0,10) %></td>
                     <td class="text-center col-1"><%= ProjectList[count].peopleNeeded %></td>
                     <td class="col-4"><%= ProjectList[count].description %></td>
 
+                    <!--edit column for edit button-->
                     <td class="text-center col-1">
                         <a href="/projects/edit/<%= ProjectList[count]._id %>" class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i> Edit
                         </a>
                     </td>
 
+                    <!--delete column for delete button, uses onclick js function to return a pop up confirmation of deleted object-->
                     <td class="text-center col-1">
                         <a href="/projects/delete/<%= ProjectList[count]._id %>" class="btn btn-danger btn-sm" onclick="return confirmDelete();">
                             <i class="fas fa-trash-alt"></i> Delete
@@ -55,6 +62,8 @@
 <br>
 <br>
 <br>
+
+<!--js function that provides a pop-up when the delete button is clicked, operates on a yes/no basis from user-->
 <script>
     function confirmDelete() {
   return confirm("Are you sure you want to delete this project? This affects all other ABC employees.");

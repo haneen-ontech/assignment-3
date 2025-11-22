@@ -1,13 +1,14 @@
 <%- include ./partials/header.ejs %>
 <%- include ./partials/main_nav.ejs %>
 
+<!--full width container using container-fluid class-->
 <div class="container-fluid my-4">
 
-  <!--Rows to divide content of home page-->
+  <!--rows to divide content of home page, this row is for banner content-->
   <div class="row align-items-center banner-row py-2 mx-2">
-    <!--Left column of first row for title and logo-->
+    <!--left column of first row for title and logo-->
 
-    <!--Right column of first row for bootstrap carousel-->
+    <!--right column of first row for bootstrap carousel-->
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000"> <!--interval is for how long each slide lasts before switching to the next, this is autoplay-->
         
         <!--Indicators, these are the buttons used to go from one slide to another-->
@@ -46,10 +47,14 @@
     </div>
   </div>
   <br>
+
+  <!--creating next row of content-->
   <div class="row justify-content-center align-items-center text-center start-row py-5">
+    <!--putting each aspect of row in their own column for organization and functionality-->
     <div class="col-12">
     <h1>Manage your team's projects from home</h1>
     </div>
+    <!--button that takes user to the projects page-->
     <div class="col-12 my-2">
     <a href="/projects" class="btn btn-lg text-white" role="button" style="background-color: #030a3c;">Manage Projects</a>
     </div>
@@ -59,14 +64,17 @@
   </div>
   <br>
   <br>
+  <!--creating another row under for company announcements, row class is centered using justify-content-center and other similar classes-->
   <div class="row justify-content-center align-items-center text-center my-4">
   <div class="col-auto">
     <h1 class="m-0"><%= title %></h1>
   </div>
+  <!--using fortawesome icons-->
   <div class="col-auto">
     <i class="fa-solid fa-bullhorn fa-3x"></i>
   </div>
 
+  <!--announcement 1, each announcement put in a container-->
   <div class="container-fluid">
     <div class="row rounded shadow p-4 my-4 mx-5 blurb">
         <div class="col-auto announcement-title fw-bold">
@@ -80,6 +88,7 @@
         </div>
     </div>
 
+    <!--announcement 2-->
     <div class="row rounded shadow p-4 my-4 mx-5 blurb">
         <div class="col-auto announcement-title fw-bold">
         <h3 class="fw-bolder">Holiday Overtime</h3>
@@ -92,6 +101,7 @@
         </div>
     </div>
 
+    <!--announcement 3-->
     <div class="row rounded shadow p-4 my-4 mx-5 blurb">
         <div class="col-auto announcement-title fw-bold">
         <h3 class="fw-bolder">Reminder</h3>
@@ -105,13 +115,18 @@
     </div>
   </div>
 </div>
+
+<!--container below main content for user redirection and contact info-->
 <div class="container my-5">
   <div class="row align-items-start">
 
+    <!--applying padding but only to medium or larger screens using pe-md-5-->
+    <!--left column-->
     <div class="col-md-6 text-start pe-md-5">
       <h1 class="fw-bold display-4">Manage Your Team With Ease</h1>
       <p class="lead text-muted">Track, view, and organize all ABC projects in one place.</p>
 
+      <!--buttons to direct users-->
       <div class="d-flex gap-3 flex-wrap">
         <a href="/how-to" class="btn btn-primary btn-lg px-4 py-3">
           <i class="fa-solid fa-book fa-lg me-2"></i> Navigate Site
@@ -123,6 +138,7 @@
       </div>
     </div>
 
+    <!--right column of same row with contact info-->
     <div class="col-md-5 text-start mt-4 mt-md-0">
       <h1 class="fw-bold display-4">Hours of Operation</h1>
       <br>

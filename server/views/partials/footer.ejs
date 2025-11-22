@@ -1,12 +1,21 @@
-<footer class="mt-auto">
+<!--Footer section-->
+
+<footer class="mt-auto"> <!--pushes footer to bottom-->
+
+  <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom" style="background-color: #030a3c;">
+
+    <!--container-fluid allows container to take up full screen width-->
     <div class="container-fluid">
 
+      <!--left side of navbar, company logo and title, when clicked taken to home page (href)-->
       <a class="navbar-brand d-flex align-items-center" href="/" class="nav-link p-0">
         <img src="/Asset/images/comp-logo.png" alt="Company Logo" class="rounded-circle" style="width:40px; height:40px; object-fit:cover;">
+        <!--title given a left-margin for look-->
         <span class="ms-2">Company ABC</span>
       </a>
 
+      <!--Toggler button for smaller screens-->
       <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
         data-bs-target="#footerNav" aria-controls="footerNav" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
@@ -14,13 +23,17 @@
 
       <div class="collapse navbar-collapse" id="footerNav">
 
+      <!--Copyright put in center of navbar using mx-auto-->
       <div class="mx-auto text-center text-white py-2">
         <h6 class="navbar-text">&copy; 2025 Haneen Al-musowi. All rights reserved</h6>
       </div>
 
+        <!--Right side of navbar with page links-->
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
+          <!--Add a project link-->
           <li class="nav-item">
+            <!--if the link is currently clicked on (active), the text is white otherwise it is subtle-->
             <% if(title=="Add a Project") { %>
               <a class="nav-link active" href="/projects/add">
                 <i class="fa-solid fa-lg fa-plus text-white"></i> Add a Project
@@ -32,6 +45,7 @@
             <% } %>
           </li>
 
+          <!--Help/contact page link-->
           <li class="nav-item">
             <% if(title=="Help") { %>
               <a class="nav-link active" href="/help">

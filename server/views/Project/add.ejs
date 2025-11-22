@@ -1,9 +1,18 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/main_nav.ejs %>
+
+<!--Add a project page-->
+
+<!--container to center content within it, adds padding-->
 <div class="container">
+    <!--row for form-->
     <div class="row">
+        <!--center the form on medium or larger screens, 6 col width and 3 col offset-->
         <div class="offset-md-3 col-md-6">
             <h1><%= title %></h1>
+
+            <!--form for adding a project-->
+            <!--project title input-->
             <form class="form" method="post">
                 <div class="form-group">
                     <label for="titleTextField">Title</label>
@@ -12,9 +21,12 @@
                     placeholder="Title your project"
                     name="title" required>
                 </div>
+
+                <!--department title input-->
                 <div class="form-group">
                     <label for="departmentTextField">Department</label>
                         <select class="form-control" id="departmentTextField" name="department" required>
+                            <!--dropdown selection for departments-->
                             <option value="">-- Select Department --</option>
                             <option value="IT">IT</option>
                             <option value="Marketing">Marketing</option>
@@ -23,6 +35,8 @@
                             <option value="Sales">Sales</option>
                         </select>
                 </div>
+
+                <!--deadline input-->
                 <div class="form-group">
                     <label for="dueDateTextField">Due Date</label>
                     <input type="date" class="form-control"
@@ -30,6 +44,8 @@
                     placeholder="Enter the due date"
                     name="dueDate" required>
                 </div>
+
+                <!--group number input-->
                 <div class="form-group">
                     <label for="peopleNeededTextField">People Needed</label>
                     <input type="number" class="form-control"
@@ -37,6 +53,8 @@
                     placeholder="How many people are needed for this project"
                     name="peopleNeeded" required>
                 </div>
+
+                <!--description input-->
                 <div class="form-group">
                     <label for="descriptionTextArea">Description</label>
                     <textarea type="text" class="form-control"
@@ -45,9 +63,13 @@
                     name="description" required></textarea>
                 </div>
                 <br>
+
+                <!--submit button-->
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i> Submit
                 </button>
+
+                <!--cancel button-->
                 <a href="/projects" class="btn btn-warning">
                     <i class="fas fa-undo"></i> Cancel
                 </a>

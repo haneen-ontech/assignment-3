@@ -1,7 +1,11 @@
 <%- include ./partials/header.ejs %>
 <%- include ./partials/main_nav.ejs %>
 
+<!--Blog on naviagting website-->
+
+<!--all content put in fluid container so that content is full width of screen, padding for invisible neat outline-->
 <div class="container-fluid py-4">
+    <!--Blog title and subtitle-->
     <div class="text-center mb-4">
         <p style="font-size: 4rem; font-weight: bold;"><%= title %></p>
         <p class="lead text-muted mx-auto" style="max-width: 900px;">
@@ -11,21 +15,27 @@
         </p>
     </div>
 
+    <!--putting each row of blog in one container-->
     <div class="container p-4 rounded" style="background-color: #dbe2ee;">
 
         <!-- ROW 1 -->
         <div class="row align-items-center mb-5">
+            <!--scaling of margins, columns, sizes for fluidity-->
+            <!--creating column or text in row-->
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 <p class="fs-5 text-left">
                     In order to view and get familiar with the project database, click the "Projects" button in the navigation bar. This will take you to the shared ABC company projects tracker. Take your time to look at the way employees have previously entered in their projects.
                 </p>
             </div>
+            <!--creating column for picture in row-->
             <div class="col-md-6 text-center">
                 <img src="Asset/images/first-help.png" class="img-fluid rounded shadow" style="max-width: 100%; width: 350px;">
             </div>
         </div>
 
         <!-- ROW 2 -->
+
+        <!--flex-md-row-reverse flips the row horizontally, this allows by blog to have an abstract layout-->
         <div class="row align-items-center mb-5 flex-md-row-reverse">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 <p class="fs-5 text-right">
@@ -59,21 +69,11 @@
             <div class="col-md-6 text-center">
                 <img src="Asset/images/fourth-help.png" class="img-fluid rounded shadow" style="max-width: 100%; width: 350px;">
             </div>
-        </div>
-
+          </div>
+      </div>
     </div>
-</div>
-
-
-    <br>
-    <br>
-
-
-
-
-
-
-
+  <br>
+  <br>
 </div>
 
 <%- include ./partials/footer.ejs %>

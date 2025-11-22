@@ -1,26 +1,39 @@
+<!--Main naviagtion bar-->
+
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #030a3c;" data-bs-theme="light">
+  <!--container fluid makes container take up entire page width-->
   <div class="container-fluid position-relative">
 
+    <!--left side with company logo and title-->
     <a class="navbar-brand" href="/">
         <img src="/Asset/images/comp-logo.png" alt="My Logo" width="50" height="50" class="rounded-circle d-inline-block align-text-top"/>
       </a>
 
-    <div class="navbar-center text-white position-absolute top-50 start-50 translate-middle">
+      <!--made title appear in the center using absolute positioning-->
+      <div class="navbar-center text-white position-absolute top-50 start-50 translate-middle">
           <span class="fw-bold" style="font-size: 28px;">ABC Project Planner</span>
     </div>
 
+    <!--Toggler button for small screens-->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <!--nav links on left side using me-auto, margin settings vary depending on screen size for fluidity-->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
+          <!--if the page is currently clicked on (active), the text is white otherwise it is subtle-->
+
+          <!--Link for home page-->
           <% if(title=="Announcements") { %>
             <a class="nav-link active" aria-current="page" href="/home"><i class="fa-solid fa-lg fa-house"></i> Home</a>
           <% } else { %>
             <a class="nav-link" aria-current="page" href="/home"><i class="fa-solid fa-lg fa-house"></i> Home</a>
           <% } %>
         </li>
+
+        <!--Link for projects page-->
         <li class="nav-item">
         <% if(title=="Project") { %>
           <a class="nav-link active" aria-current="page" href="/projects"><i class="fa-solid fa-lg fa-book"></i> Projects</a>
@@ -28,12 +41,15 @@
           <a class="nav-link" aria-current="page" href="/projects"><i class="fa-solid fa-lg fa-book"></i> Projects</a>
         <% } %>
         </li>
+
+        <!--using a dropdown menu for less visited pages of website-->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
           <ul class="dropdown-menu">
             <li>
+              <!--Link to how to naviagte page-->
               <% if(title=="How to Navigate") { %>
                 <a class="dropdown-item active" aria-current="page" href="/how-to"><i class="fa-solid fa-lg fa-circle-info"></i> How-to</a>
               <% } else { %>
@@ -42,6 +58,7 @@
             </li>
             <li><hr class="dropdown-divider"></li>
             <li>
+              <!--Link to help/contact page-->
               <% if(title=="Contact Us") { %>
                 <a class="dropdown-item active" aria-current="page" href="/help"><i class="fa-solid fa-lg fa-phone"></i> Help</a>
               <% } else { %>
@@ -50,7 +67,8 @@
             </li>
           </ul>
       </ul>
-      
+
+      <!--using a form for the search bar on the right (ms-auto), use onsubmit to return searched page immediately-->
       <form class="d-flex ms-auto" role="search" onsubmit="return navigatePage()">
         <input id="pageSearch" class="form-control me-2" type="search" placeholder="Search pages..." aria-label="Search"/>
         <button class="btn btn-outline-light" type="submit">Search</button>
@@ -59,11 +77,15 @@
   </div>
 </nav>
 
+<!--javascript for search function-->
+<!--used resources: https://mdbootstrap.com/docs/standard/forms/search/   AND    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes-->
 <script>
   function navigatePage() {
+
+    // get the input value, clean it by making it all lowercase and getting rid of white spaces
     const input = document.getElementById('pageSearch').value.toLowerCase().trim();
 
-    // Map of pages to multiple search terms
+    // Map of pages to multiple frequently used search terms (using arrays for multiple values)
     const pages = {
       '/': ['home', 'main'],
       '/home': ['home', 'main'],
@@ -72,7 +94,9 @@
       '/help': ['help', 'support', 'contact']
     };
 
-    let found = false;
+    let found = false; // setting the default of finding the page to false, like an implicit deny
+
+    //looping through the map to check if the input matches any of the keywords
     for (const [url, keywords] of Object.entries(pages)) {
       if (keywords.includes(input)) {
         window.location.href = url; // navigate to the page
@@ -80,11 +104,11 @@
         break;
       }
     }
-
+    // if nothing is found, a page not found alert pops up
     if (!found) {
       alert("Page not found!");
     }
 
-    return false; // prevent form submission
+    return false; // prevent actual form submission since the search bar is a form element
   }
 </script>

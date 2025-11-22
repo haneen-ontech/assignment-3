@@ -1,19 +1,19 @@
 <%- include ./partials/header.ejs %>
 <%- include ./partials/main_nav.ejs %>
 
-    <main class="container my-5"> <!--Main container-->
-  <div class="row">
-    <div class="offset-md-1 col-md-10"> <!--Centered column-->
+    <main class="container my-5"> <!--Main container for form card with margin 5 for spacing-->
+    <div class="row"> <!--putting form card in a row-->
+      <div class="offset-md-1 col-md-10"> <!--centered column using offset-->
 
       <!-- Contact Card -->
-      <div class="card mx-auto shadow" style="background-color:#dbe2ee; max-width: 600px; width: 100%;"> <!--Card centered with fixed width-->
-        <div class="card-body"> <!--Card body-->
+      <div class="card mx-auto shadow" style="background-color:#dbe2ee; max-width: 600px; width: 100%;"> <!--card centered using mx-auto with fixed max width for fluidity-->
+        <div class="card-body"> <!--actual card body with text/content-->
 
-          <h1 class="contactTitle text-center"><%= title %></h1> <!--Contact page Title-->
+          <h1 class="contactTitle text-center"><%= title %></h1> <!--contact page title with muted text under it-->
           <p class="text-muted text-center">Have a question that just can't wait?</p>
           <br>
 
-          <form class="row g-3 needs-validation text-center mx-auto" style="width: 100%; max-width: 500px;" novalidate> <!--Contact Form-->
+          <form class="row g-3 needs-validation text-center mx-auto" style="width: 100%; max-width: 500px;" novalidate> <!--Contact Form, creates spacing using g-3, enabling validation styles-->
             
             <!--First name-->
             <div class="mb-3"> 
@@ -57,8 +57,11 @@
 </div>
 </main>
 <br>
+
+<!--Section for contact by phone/email-->
 <div class="container-fluid p-5" style="background-color: lightgrey;">
         <div class="row align-items-start">
+          
             <!-- Title column -->
             <div class="col-md-4 text-start">
             <h1 class="fw-bold display-4">Hours of Operation</h1>

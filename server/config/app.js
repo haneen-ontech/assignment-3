@@ -1,6 +1,7 @@
 // Hide Mongo URI
 var dotenv = require('dotenv').config(); // Load env variables
 
+// Assigning variables to our downloaded modules
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -11,10 +12,12 @@ var logger = require('morgan');
 let mongoose = require('mongoose');
 let DB = require('./db');
 
+// configuring main routes 
 var indexRouter = require('../routes/index');
 var usersRouter = require('../routes/users');
 let projectsRouter = require('../routes/project');
 
+// initializing express
 var app = express();
 
 // point mongoose to the DB URI
@@ -23,7 +26,7 @@ let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind('console','Connection Error'));
 mongoDB.once('open',()=>{
   console.log("Connected to DB:", mongoose.connection.name);
-  console.log("Collections:", Object.keys(mongoose.connection.collections));
+  console.log("Collections:", Object.keys(mongoose.connection.collections)); // test for connection to correct database and collection
 });
 
 // view engine setup
@@ -36,7 +39,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-
+// assigning routes to end of website url
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/projects', projectsRouter);
