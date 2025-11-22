@@ -1,7 +1,5 @@
 <%- include ./partials/header.ejs %>
 <%- include ./partials/main_nav.ejs %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %> page</p>
 
 <div class="container-fluid my-4">
 
@@ -48,4 +46,96 @@
     </div>
   </div>
   <br>
+  <div class="row justify-content-center align-items-center text-center start-row py-5">
+    <div class="col-12">
+    <h1>Manage your team's projects from home</h1>
+    </div>
+    <div class="col-12 my-2">
+    <a href="/projects" class="btn btn-lg text-white" role="button" style="background-color: #030a3c;">Manage Projects</a>
+    </div>
+    <div class="col-12">
+    <h6 style="color:grey;">Accessible for all ABC employees</h6>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row justify-content-center align-items-center text-center my-4">
+  <div class="col-auto">
+    <h1 class="m-0"><%= title %></h1>
+  </div>
+  <div class="col-auto">
+    <i class="fa-solid fa-bullhorn fa-3x"></i>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row rounded shadow p-4 my-4 mx-5 blurb">
+        <div class="col-auto announcement-title fw-bold">
+        <h3 class="fw-bolder">Key Card Rotation</h3>
+        </div>
+        <div class="col-auto announcement-horn">
+            <i class="fa-solid fa-bullhorn fa-2x"></i>
+        </div>
+        <div class="text-white text-start">
+        <h5>All ABC employees please by sure to pick up your new key card from the main ABC office. All current key cards will expire by November 30 2025.</h5>
+        </div>
+    </div>
+
+    <div class="row rounded shadow p-4 my-4 mx-5 blurb">
+        <div class="col-auto announcement-title fw-bold">
+        <h3 class="fw-bolder">Holiday Overtime</h3>
+        </div>
+        <div class="col-auto announcement-horn">
+            <i class="fa-solid fa-bullhorn fa-2x"></i>
+        </div>
+        <div class="text-white text-start">
+        <h5>Interested in working the holiday for time and a half? Please let your department manager know by the end of this week!</h5>
+        </div>
+    </div>
+
+    <div class="row rounded shadow p-4 my-4 mx-5 blurb">
+        <div class="col-auto announcement-title fw-bold">
+        <h3 class="fw-bolder">Reminder</h3>
+        </div>
+        <div class="col-auto announcement-horn">
+            <i class="fa-solid fa-bullhorn fa-2x"></i>
+        </div>
+        <div class="text-white text-start">
+        <h5>All ABC employees please make sure to delete projects that have been completed. This is a shared space, please keep it clean!</h5>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container my-5">
+  <div class="row align-items-start">
+
+    <div class="col-md-6 text-start pe-md-5">
+      <h1 class="fw-bold display-4">Manage Your Team With Ease</h1>
+      <p class="lead text-muted">Track, view, and organize all ABC projects in one place.</p>
+
+      <div class="d-flex gap-3 flex-wrap">
+        <a href="/how-to" class="btn btn-primary btn-lg px-4 py-3">
+          <i class="fa-solid fa-book fa-lg me-2"></i> Navigate Site
+        </a>
+
+        <a href="/help" class="btn btn-primary btn-lg px-4 py-3">
+          <i class="fa-solid fa-plus fa-lg me-2"></i> Contact Us
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-5 text-start mt-4 mt-md-0">
+      <h1 class="fw-bold display-4">Hours of Operation</h1>
+      <br>
+      <p class="lead text-muted">Phone: 819-XXX-XXXX (8am to 5pm)</p>
+      <p class="lead text-muted">Phone (Toll Free): 888-XXX-XXXX (8am to 5pm)</p>
+      <p class="lead text-muted">Email: support@abcompany.org (24 hour response)</p>
+    </div>
+
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
 <%- include ./partials/footer.ejs %>

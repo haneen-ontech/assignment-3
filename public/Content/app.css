@@ -1,2 +1,26 @@
 /*#748db9*/
 /*#030a3c*/
+/*#728f78*/
+/*#ffb929*/
+
+.start-row{
+    background-color: #dbe2ee;
+}
+
+.blurb{
+    background-color: #728f78;
+}
+
+.blurb:hover{
+    background-color: #516956;
+    scale: 1.03;
+    
+}
+
+.announcement-title{
+    color: #030a3c;
+}
+
+.announcement-horn{
+    color: #ffb929;
+}
