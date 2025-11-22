@@ -1,8 +1,11 @@
+/*Colour palette*/
+
 /*#748db9*/
 /*#030a3c*/
 /*#728f78*/
 /*#ffb929*/
 
+/*styling background colours of rows, containers, and so on*/
 .start-row{
     background-color: #dbe2ee;
 }
@@ -11,12 +14,14 @@
     background-color: #728f78;
 }
 
+/*style for when mouse hovers over elements in blurb class (the announcements on home page)*/
 .blurb:hover{
     background-color: #516956;
     scale: 1.03;
     
 }
 
+/*styling text colours of titles and icons*/
 .announcement-title{
     color: #030a3c;
 }

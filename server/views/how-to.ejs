@@ -1,5 +1,79 @@
 <%- include ./partials/header.ejs %>
 <%- include ./partials/main_nav.ejs %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %> page</p>
+
+<div class="container-fluid py-4">
+    <div class="text-center mb-4">
+        <p style="font-size: 4rem; font-weight: bold;"><%= title %></p>
+        <p class="lead text-muted mx-auto" style="max-width: 900px;">
+            Learn to navigate our brand new project manager software accessible to all ABC employees!
+            Here we'll give you a run-down on how to navigate this website with ease and efficiency! 
+            Don't worry, soon you'll be a pro.
+        </p>
+    </div>
+
+    <div class="container p-4 rounded" style="background-color: #dbe2ee;">
+
+        <!-- ROW 1 -->
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <p class="fs-5 text-left">
+                    In order to view and get familiar with the project database, click the "Projects" button in the navigation bar. This will take you to the shared ABC company projects tracker. Take your time to look at the way employees have previously entered in their projects.
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="Asset/images/first-help.png" class="img-fluid rounded shadow" style="max-width: 100%; width: 350px;">
+            </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="row align-items-center mb-5 flex-md-row-reverse">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <p class="fs-5 text-right">
+                    At the top of the table, there is a button that directs you to adding your own project in. Whenever you need to log a project for all ABC employees to see, click this button and create an entry.
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="Asset/images/second-help.png" class="img-fluid rounded shadow" style="max-width: 100%; width: 350px;">
+            </div>
+        </div>
+
+        <!-- ROW 3 -->
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <p class="fs-5 text-left">
+                    Now for the fun part! Take your time filling in the blanks when creating your project entry. You must write the title, choose the department, deadline, number of people needed for the project, and finally you must add a description. Once you're done, hit submit, and voila!
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="Asset/images/third-help.png" class="img-fluid rounded shadow" style="max-width: 100%; width: 350px;">
+            </div>
+        </div>
+
+        <!-- ROW 4 -->
+        <div class="row align-items-center mb-3 flex-md-row-reverse">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <p class="fs-5 text-right">
+                    At the end of each entry in table there is an independent edit and delete button. Click edit if you'd like to change something about your project. This will update quickly for all other ABC employees to see. If you really want to get rid of an entry you can hit delete! Note: you'll have to hit confim on the alert once you press the delete button.
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="Asset/images/fourth-help.png" class="img-fluid rounded shadow" style="max-width: 100%; width: 350px;">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    <br>
+    <br>
+
+
+
+
+
+
+
+</div>
+
 <%- include ./partials/footer.ejs %>

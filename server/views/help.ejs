@@ -1,5 +1,78 @@
 <%- include ./partials/header.ejs %>
 <%- include ./partials/main_nav.ejs %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %> page</p>
+
+    <main class="container my-5"> <!--Main container-->
+  <div class="row">
+    <div class="offset-md-1 col-md-10"> <!--Centered column-->
+
+      <!-- Contact Card -->
+      <div class="card mx-auto shadow" style="background-color:#dbe2ee; max-width: 600px; width: 100%;"> <!--Card centered with fixed width-->
+        <div class="card-body"> <!--Card body-->
+
+          <h1 class="contactTitle text-center"><%= title %></h1> <!--Contact page Title-->
+          <p class="text-muted text-center">Have a question that just can't wait?</p>
+          <br>
+
+          <form class="row g-3 needs-validation text-center mx-auto" style="width: 100%; max-width: 500px;" novalidate> <!--Contact Form-->
+            
+            <!--First name-->
+            <div class="mb-3"> 
+              <label for="firstName" class="form-label">First Name:</label> <!--First name label-->
+              <input type="text" class="form-control" id="firstName" required placeholder="Enter Your First Name"> <!--input first name-->
+              <div class="valid-feedback">Looks good!</div> <!--If valid output-->
+              <div class="invalid-feedback">Please enter your first name.</div> <!--If invalid output-->
+            </div>
+
+            <!--Last name-->
+            <div class="mb-3"> 
+              <label for="lastName" class="form-label">Last Name:</label> <!--First name label-->
+              <input type="text" class="form-control" id="lastName" required placeholder="Enter Your Last Name"> <!--input last name-->
+              <div class="valid-feedback">Looks good!</div> <!--If valid output-->
+              <div class="invalid-feedback">Please enter your last name.</div> <!--If invalid output-->
+            </div>
+
+            <!--Email-->
+            <div class="mb-3"> 
+              <label for="email" class="form-label">Company ABC email:</label> <!--Email label-->
+              <input type="email" class="form-control" id="email" required placeholder="Enter Your Email"> <!--input email-->
+              <div class="valid-feedback">Looks good!</div> <!--If valid output-->
+              <div class="invalid-feedback">Please enter a valid email address.</div> <!--If invalid output-->
+            </div>
+
+            <!--Comments-->
+            <div class="mb-3"> 
+              <label for="comments" class="form-label">Any Comments:</label> <!--Comment label-->
+              <textarea class="form-control" id="comments" rows="3" required placeholder="Enter any Questions or Queries"></textarea> <!--input comments or questions-->
+            </div>
+
+            <!--Submit button-->
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Submit form</button> <!--the submit button-->
+            </div>
+          </form>
+        </div>
+      </div>
+    <br>
+    <br>
+</div>
+</main>
+<br>
+<div class="container-fluid p-5" style="background-color: lightgrey;">
+        <div class="row align-items-start">
+            <!-- Title column -->
+            <div class="col-md-4 text-start">
+            <h1 class="fw-bold display-4">Hours of Operation</h1>
+            </div>
+
+            <!-- Content column -->
+            <div class="col-md-8 text-start">
+            <br>
+            <p class="lead text-muted mb-2">Phone: 819-XXX-XXXX (8am to 5pm)</p>
+            <p class="lead text-muted mb-2">Phone (Toll Free): 888-XXX-XXXX (8am to 5pm)</p>
+            <p class="lead text-muted mb-2">Email: support@abcompany.org (24 hour response)</p>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
 <%- include ./partials/footer.ejs %>

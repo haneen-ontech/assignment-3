@@ -18,7 +18,7 @@ router.get('/how-to', function(req, res, next) {
 
 /* GET help page. */
 router.get('/help', function(req, res, next) {
-  res.render('help', { title: 'Help'});
+  res.render('help', { title: 'Contact Us'});
 });
 
 module.exports = router;

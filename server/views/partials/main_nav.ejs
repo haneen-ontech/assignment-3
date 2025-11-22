@@ -42,7 +42,7 @@
             </li>
             <li><hr class="dropdown-divider"></li>
             <li>
-              <% if(title=="Help") { %>
+              <% if(title=="Contact Us") { %>
                 <a class="dropdown-item active" aria-current="page" href="/help"><i class="fa-solid fa-lg fa-phone"></i> Help</a>
               <% } else { %>
                 <a class="dropdown-item" aria-current="page" href="/help"><i class="fa-solid fa-lg fa-phone"></i> Help</a>
@@ -51,10 +51,40 @@
           </ul>
       </ul>
       
-      <form class="d-flex ms-auto" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <form class="d-flex ms-auto" role="search" onsubmit="return navigatePage()">
+        <input id="pageSearch" class="form-control me-2" type="search" placeholder="Search pages..." aria-label="Search"/>
         <button class="btn btn-outline-light" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
+
+<script>
+  function navigatePage() {
+    const input = document.getElementById('pageSearch').value.toLowerCase().trim();
+
+    // Map of pages to multiple search terms
+    const pages = {
+      '/': ['home', 'main'],
+      '/home': ['home', 'main'],
+      '/projects': ['projects', 'proj', 'database', 'records'],
+      '/how-to': ['how-to', 'navigate', 'guide'],
+      '/help': ['help', 'support', 'contact']
+    };
+
+    let found = false;
+    for (const [url, keywords] of Object.entries(pages)) {
+      if (keywords.includes(input)) {
+        window.location.href = url; // navigate to the page
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      alert("Page not found!");
+    }
+
+    return false; // prevent form submission
+  }
+</script>
